@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+    <style>
+    
+    body{
+      background:rgb(161,177,181);
+    }
+    h2{
+      color:white;
+    }
+      h2::first-letter{
+        color:#c40303;
+        font-size:35px;
+      }
+    input[type="text"]{
+      padding:9px;
+      margin-bottom:3px;
+      outline:none;
+      color:#3600be;
+      border-radius:12px;
+      border:none;
+      border:2px solid rgb(193,2,2);
+      font-weight:bold;
+      color:rgb(51,2,193);
+    }
+    h3{
+      margin:0;
+      padding:0;
+    }
+      .container{
+        margin:30px 0;
+      }
+      
+      .btn{
+        padding:10px 20px;
+        margin-top:10px;
+        outline:none;
+        background:gold;
+        font-weight:bold;
+        
+      }
+      
+      .result{
+        margin:20px 0px;
+        border:2px solid white;
+        
+      }
+      .re::first-letter{
+        font-size:35px;
+        color:white;
+      }
+      .warn{
+        padding:5px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <center>
+      <h2>Love percentage</h2>
+      <code>If you are a couple, you can try</code>
+    </center>
+   <br />
+    <hr />
+    
+      
+  <div class="container">
+      <center>
+    <input type="text" class="name" placeholder="your name" required/>
+    <h3>+</h3>  
+    <input type="text" class="name2" placeholder="your lover name" required/>
+    </center>
+    <center><button class="btn">check percentage</button></center>
+  </div>
+    <hr />
+    
+    
+    <center>
+      <div class="result">
+        <h3 class="warn"></h3><br />
+        <h4 class="result2"></h4>
+      </div>
+      
+    </center>
+    
+    
+    
+    
+    <script>
+      
+  var btn=document.querySelector(".btn")
+  
+  
+ btn.addEventListener("click",()=>{
+   
+  var result2=document.querySelector(".result2")
+  var ran=Math.floor(Math.random()*100+1)
+  
+  var name=document.querySelector(".name").value  
+  var name2=document.querySelector(".name2").value
+ var warn=document.querySelector(".warn")
+     
+    if(name=="" || name2==""){
+      warn.innerHTML='warning! input field is blank'
+    warn.style.color="red"
+    }
+    
+    else if(name.length<4 || name2.length<4){
+    warn.innerHTML='must be 4 character'
+    warn.style.color="red"
+    }
+    
+    else{
+      if(ran>=80 && ran<=100){
+        result2.innerHTML="** best couple"
+      }if(ran>=60 && ran<=79){
+        result2.innerHTML="** not bad"
+      }if(ran>=30 && ran<=59){
+        result2.innerHTML="** subidhar na"
+      }if(ran<29){
+        result2.innerHTML="** wait for breakup"
+      }
+      
+    warn.innerHTML="("+name+"+"+name2+")"+" Love percentage is="+ran+"%"
+    warn.style.color="rgb(160,0,0)"
+    }
+    
+        
+        
+      })
+    </script>
+  </body>
+</html>
